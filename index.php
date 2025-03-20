@@ -1,9 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$sessionid = $_POST['sessionid'] ?? '';
-$servicecode = $_POST['servicecode'] ?? '';
-$phonenumber = $_POST['phonenumber'] ?? '';
-$text = $_POST['text'] ?? '';
+$sessionid = $_REQUEST['sessionid'] ?? '';
+$servicecode = $_REQUEST['servicecode'] ?? '';
+$phonenumber = $_REQUEST['phonenumber'] ?? '';
+$text = $_REQUEST['text'] ?? '';
 
 if ($text == "") {
     $response = "CON Check what you want to choose:\n";
@@ -27,5 +29,4 @@ if ($text == "") {
 
 header("Content-Type: text/plain");
 echo $response;
-
 ?>
